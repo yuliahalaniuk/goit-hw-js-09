@@ -12,10 +12,8 @@ function onSubmit(e) {
   e.preventDefault();
 
   const amount = parseInt(amountInput.value);
-  const delay = parseInt(delayInput.value);
+  let delay = parseInt(delayInput.value);
   const step = parseInt(stepInput.value);
-
-  let time = delay;
 
   for (let i = 1; i <= amount; i += 1) {
     createPromise(i, time)
@@ -25,7 +23,7 @@ function onSubmit(e) {
       .catch(({ position, delay }) => {
         Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
       });
-    time += step;
+    delay += step;
   }
 }
 
