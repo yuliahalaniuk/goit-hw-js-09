@@ -1,13 +1,12 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const form = document.querySelector('.form');
-const submitBtn = document.querySelector("button[type='submit']");
 
 const delayInput = form.elements.delay;
 const stepInput = form.elements.step;
 const amountInput = form.elements.amount;
 
-submitBtn.addEventListener('click', onSubmit);
+form.addEventListener('submit', onSubmit);
 
 function onSubmit(e) {
   e.preventDefault();
