@@ -37,11 +37,11 @@ refs.startBtn.addEventListener('click', () => {
 });
 
 function calculateRemainingTime(selDate) {
-  const intervalID = setInterval(() => {
+   intervalID = setInterval(() => {
     const currentTime = Date.now();
     const timeRemaining = selDate - currentTime;
 
-    if (timeRemaining <= 0) {
+    if (timeRemaining <= 1000) {
       clearInterval(intervalID);
       refs.startBtn.disabled = false;
     }
