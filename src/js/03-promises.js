@@ -16,7 +16,7 @@ function onSubmit(e) {
   const step = parseInt(stepInput.value);
 
   for (let i = 1; i <= amount; i += 1) {
-    createPromise(i, time)
+    createPromise(i, delay)
       .then(({ position, delay }) => {
         Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
       })
